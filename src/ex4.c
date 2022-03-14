@@ -38,6 +38,37 @@
 
 int main (int argc, char *argv[])
 {
+  int array[ARRAY_MAX][ARRAY_MAX],tamanho[ARRAY_MAX],i,j,a;
+  j = 0;
+
+
+ 
+  for(i=0;i<ARRAY_MAX;i++){
+    printf("Linha %i: ", i);
+    for(j=0;j<ARRAY_MAX;j++){
+      scanf("%i",&a);
+      if(a==-100){
+        break;
+      }
+      array[i][j] = a;
+    }
+    tamanho[i] = j; // armazena o numero de elementos no array de tamanhos
+
+    if(j==0&&a==-100){
+      break;
+    }
+
+    if(tamanho[i-1]!=tamanho[i]){
+      printf("Número de colunas incompatível. Saindo...");
+      break;
+    }
+     
+    
+  }
+  
+
+
+
 
   return 0;
 }
