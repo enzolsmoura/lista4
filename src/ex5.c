@@ -22,14 +22,26 @@
 #define ARRAY_MAX 3 // Valor máximo para o tamanho do array. Não modifique.
 
 /* Protótipos */
-int determinante(int matriz[ARRAY_MAX][ARRAY_MAX]);
+int determinante(int matriz[ARRAY_MAX][ARRAY_MAX]){
+  int det;
+  det = matriz[0][0]*matriz[1][1]*matriz[2][2]+matriz[0][1]*matriz[1][2]*matriz[2][0]+matriz[0][2]*matriz[2][1]*matriz[1][0]-matriz[2][0]*matriz[1][1]*matriz[0][2]-matriz[2][1]*matriz[1][2]*matriz[0][0]-matriz[2][2]*matriz[0][1]*matriz[1][0];
+  return det;
+}
+
 
 int main (int argc, char *argv[])
 {
-
+  int i,j,matriz[ARRAY_MAX][ARRAY_MAX];
+  for(i=0;i<ARRAY_MAX;i++){
+    printf("Digite a linha %i: ",i);
+    for(j=0;j<ARRAY_MAX;j++){
+      scanf("%i", &matriz[i][j]);
+    }
+  }
+  printf("%i",determinante(matriz));
+  
   return 0;
 }
 
-int determinante(int matriz[ARRAY_MAX][ARRAY_MAX]) {
-}
+
 
