@@ -26,31 +26,30 @@
 
 /* Protótipos */
 
-
-
 float calcula_media(int array[], int tam_array)
 {
-  float media,total;
+  float media, total;
   int i;
   total = 0.0;
-  for(i=0;i<tam_array;i++){
+  for (i = 0; i < tam_array; i++)
+  {
     total += array[i];
   }
-  media = total/tam_array;
+  media = total / tam_array;
   return media;
-  
 }
 
 float calcula_dvp(int array[], int tam_array)
 {
-  float dvp,media,total;
+  float dvp, media, total;
   int i;
   total = 0.0;
-  media = calcula_media(array,tam_array);
-  for(i=0;i<tam_array;i++){
-    total += pow((array[i]-media),2.0);
+  media = calcula_media(array, tam_array);
+  for (i = 0; i < tam_array; i++)
+  {
+    total += pow((array[i] - media), 2.0);
   }
-  dvp = sqrt(total/tam_array);
+  dvp = sqrt(total / tam_array);
   return dvp;
 }
 
@@ -62,18 +61,17 @@ int main(int argc, char *argv[])
   i = 0;
   a = 0;
   printf("Digite os valores para o array: ");
-  do{
-    scanf("%i",&a);
-    if(a==-100){
+  do
+  {
+    scanf("%i", &a);
+    if (a == -100)
+    {
       break;
     }
     array[i] = a;
     i += 1;
-  }while(i<ARRAY_MAX);
-  printf("%.2f +- %.1f",calcula_media(array,i),calcula_dvp(array,i));
+  } while (i < ARRAY_MAX);
+  printf("%.2f +- %.1f", calcula_media(array, i), calcula_dvp(array, i));
 
   return 0;
 }
-
-
-

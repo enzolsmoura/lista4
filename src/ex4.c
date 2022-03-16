@@ -35,20 +35,20 @@
 #define ARRAY_MAX 100 // Valor máximo para o tamanho do array. Não modifique.
 
 /* Protótipos */
-void exibe_array(int array[], int tam_array){
+void exibe_array(int array[], int tam_array)
+{
   int j;
   printf("[");
-  for(j=0;j<tam_array-1;j++){
+  for (j = 0; j < tam_array - 1; j++)
+  {
     printf("%i, ", array[j]);
   }
-  printf("%i]",array[j]);
+  printf("%i]", array[j]);
 }
-
-
 
 int main(int argc, char *argv[])
 {
-  int array[ARRAY_MAX][ARRAY_MAX], tamanho[ARRAY_MAX], i, j, k, a;
+  int array[ARRAY_MAX][ARRAY_MAX], tamanho[ARRAY_MAX], i, j, a;
   j = 0;
   for (i = 0; i < ARRAY_MAX; i++)
   {
@@ -74,14 +74,13 @@ int main(int argc, char *argv[])
     }
   }
   printf("[");
-  for(j=0;j<i-1;j++){
-    exibe_array(array[j],tamanho[0]);
+  for (j = 0; j < i - 1; j++)
+  {
+    exibe_array(array[j], tamanho[0]);
     printf(",\n");
   }
-  exibe_array(array[j],tamanho[0]);
+  exibe_array(array[j], tamanho[0]);
   printf("]");
-  
-  
 
   return 0;
 }
